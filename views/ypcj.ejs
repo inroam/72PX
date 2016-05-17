@@ -1,18 +1,24 @@
-<%- include header  %>
+<% include header  %>
 <div id="ypcj" class="container-fluid">
     <div class="row">
         <!----------------约拍场景排行榜 开始----------------------->
         <div id="ypcjTop" class="col-lg-2">
-            <div><a href="javascript:void(0)" title="<%= ypcjs.name %>"><img src="images/topBg.jpg" class="img-responsive"></a></div>
+            <a href="javascript:void(0)" title="<%= ypcjs.name %>"><img src="images/topBg.jpg" class="img-responsive"></a>
             <div class="items">
                 <ul>
                     <% ypcjs.data.forEach(function(ypcj, index){ %>
                     <li class="clearfix <%= index %>">
-                        <a href="ypcj?id=<%= ypcj.id %>" class="pull-left"><img src="<%= ypcj.cover %>" class="img-responsive" /></a>
-                        <div class="info pull-left">
+                        <a href="ypcj?id=<%= ypcj.id %>" class="show">
+                            <img src="<%= ypcj.cover %>" class="img-responsive pull-left" />
+                            <div class="info pull-left">
+                                <h4><%= ypcj.name %></h4>
+                                <p class="hits text-info">约拍指数：<%= ypcj.hits %></p>
+                                <p class="text-warning">注意事项：<%= ypcj.mark %></p>
+                            </div>
+                        </a>
+                        <div class="detail detail<%= index %> hidden">
                             <h4><%= ypcj.name %></h4>
-                            <p class="hits">约拍指数：<%= ypcj.hits %></p>
-                            <p class="mark">注意事项：<%= ypcj.mark %></p>
+                            <img src="<%= ypcj.cover %>" class="img-responsive pull-left detailImg" />
                         </div>
                     </li>
                     <% }) %>
@@ -25,10 +31,11 @@
         <!----------------约拍场景地图 结束----------------------->
     </div>
 </div>
+<% include footer %>
 <script src="http://api.map.baidu.com/api?v=2.0&ak=8ft7ZgDwrktuzixGhGLajPZAfmiVdTm1"></script>
 <script>
     var map = new BMap.Map("ypcjMap");          // 创建地图实例
-    var point = new BMap.Point(116.331398,39.897445);  // 创建点坐标
+    var point = new BMap.Point(104.686164,31.473364); // 创建点坐标
     map.addControl(new BMap.NavigationControl());               // 添加平移缩放控件
     map.addControl(new BMap.ScaleControl());                    // 添加比例尺控件
     map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
@@ -36,8 +43,7 @@
     map.addControl(new BMap.MapTypeControl());          //添加地图类型控件
     map.disable3DBuilding();
     map.setMapStyle({style:"grayscale"});    //设置地图模板为高端灰
-    map.centerAndZoom(point, 14);   //设置地图中心点
-
+    map.centerAndZoom(point, 15);   //设置地图中心点
 
     /* 根据IP定位中心点*/
     function myFun(result){
@@ -46,5 +52,22 @@
     }
     var myCity = new BMap.LocalCity();
     myCity.get(myFun);
+    createInfo();
+
+    /* 创建信息展示窗口 */
+    function createInfo(){
+        var sContent = $(".detail0").html();
+        var marker = new BMap.Marker(point);
+        var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+        map.centerAndZoom(point, 15);
+        map.addOverlay(marker);
+        marker.addEventListener("click", function(){
+            this.openInfoWindow(infoWindow);
+            //图片加载完毕重绘infowindow
+            $(".detailImg").onload = function (){
+                infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+            }
+        });
+    }
+
 </script>
-<%- include footer %>

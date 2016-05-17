@@ -1,13 +1,15 @@
 html,body{height: 100%}
 ul{padding: 0; margin: 0}
 /* -------------------------------------- 公共头部 ---------------------------------- */
-#header{height: 60px; background-color: #000}
+#header{height: 60px; background-color: #000; position: relative; z-index: 2}
 #headerNav{line-height: 60px;}
 #headerNav a{color: #FFF; font-size: 14px; text-align: center; display: inline-block; width: 80px; text-decoration: none}
 #headerNav a:hover,#headerNav a.on{background-color: #FFF; color: #000}
 #logo{background: url("../images/logo.png") center center no-repeat; width: 123px; height: 40px; margin: 10px 50px; display: block}
 /* -------------------------------------- 约拍场景 ---------------------------------- */
 #ypcj,#ypcj .row,#ypcjMap{height: 100%}
-#ypcjTop{padding: 0;}
+#ypcjTop{padding: 0; height: 100%; overflow: hidden}
 #ypcjTop .items li{list-style: none; line-height: 30px; border-bottom: 1px solid #e3e3e3; display: block}
-#ypcjTop .items img{width: 30%; height: auto}
+#ypcjTop .items img{width: 40%; height: auto; margin:20px 10px;}
+#ypcjTop .items .info{width: 50%;}
+#ypcjTop .items p{font-size: 12px;}
