@@ -1,10 +1,12 @@
 <% include header  %>
-<div id="ypcj" class="container-fluid">
+<link rel="stylesheet" href="/css/perfect-scrollbar.min.css" />
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<main id="ypcj" class="container-fluid">
     <div class="row">
         <!----------------约拍场景排行榜 开始----------------------->
-        <div id="ypcjTop" class="col-lg-2">
-            <a href="javascript:void(0)" title="<%= ypcjs.name %>"><img src="images/topBg.jpg" class="img-responsive"></a>
-            <div class="items">
+        <article id="ypcjTop" class="col-lg-2">
+            <a href="javascript:void(0)" title="<%= ypcjs.name %>" class="show"><img src="images/topBg.jpg" class="img-responsive"></a>
+            <section id="ypcjTopMain" class="contentHolder items">
                 <ul>
                     <% ypcjs.data.forEach(function(ypcj, index){ %>
                     <li class="clearfix <%= index %>">
@@ -16,58 +18,24 @@
                                 <p class="text-warning">注意事项：<%= ypcj.mark %></p>
                             </div>
                         </a>
-                        <div class="detail detail<%= index %> hidden">
+                        <div class="detail detail<%= index %> hidden" data-lat="<%= ypcj.lat %>" data-lng="<%= ypcj.lng %>">
                             <h4><%= ypcj.name %></h4>
-                            <img src="<%= ypcj.cover %>" class="img-responsive pull-left detailImg" />
+                            <p class="text-info"><%= ypcj.desc %></p>
+                            <img src="<%= ypcj.cover %>" class="img-responsive pull-left detailImg<%= index %>" />
                         </div>
                     </li>
                     <% }) %>
                 </ul>
-            </div>
-        </div>
+            </section>
+        </article>
         <!----------------约拍场景排行榜 结束----------------------->
         <!----------------约拍场景地图 开始----------------------->
-        <div id="ypcjMap" class="col-lg-10"></div>
+        <section id="ypcjMap" class="col-lg-10"></section>
         <!----------------约拍场景地图 结束----------------------->
     </div>
-</div>
+</main>
 <% include footer %>
 <script src="http://api.map.baidu.com/api?v=2.0&ak=8ft7ZgDwrktuzixGhGLajPZAfmiVdTm1"></script>
-<script>
-    var map = new BMap.Map("ypcjMap");          // 创建地图实例
-    var point = new BMap.Point(104.686164,31.473364); // 创建点坐标
-    map.addControl(new BMap.NavigationControl());               // 添加平移缩放控件
-    map.addControl(new BMap.ScaleControl());                    // 添加比例尺控件
-    map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
-    map.enableScrollWheelZoom();                            //启用滚轮放大缩小
-    map.addControl(new BMap.MapTypeControl());          //添加地图类型控件
-    map.disable3DBuilding();
-    map.setMapStyle({style:"grayscale"});    //设置地图模板为高端灰
-    map.centerAndZoom(point, 15);   //设置地图中心点
-
-    /* 根据IP定位中心点*/
-    function myFun(result){
-        var cityName = result.name;
-        map.setCenter(cityName);
-    }
-    var myCity = new BMap.LocalCity();
-    myCity.get(myFun);
-    createInfo();
-
-    /* 创建信息展示窗口 */
-    function createInfo(){
-        var sContent = $(".detail0").html();
-        var marker = new BMap.Marker(point);
-        var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
-        map.centerAndZoom(point, 15);
-        map.addOverlay(marker);
-        marker.addEventListener("click", function(){
-            this.openInfoWindow(infoWindow);
-            //图片加载完毕重绘infowindow
-            $(".detailImg").onload = function (){
-                infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
-            }
-        });
-    }
-
-</script>
+<script src="/js/jquery.mousewheel.min.js"></script>
+<script src="/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="/js/ypcj.js"></script>
