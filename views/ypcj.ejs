@@ -1,6 +1,5 @@
 <% include header  %>
 <link rel="stylesheet" href="/css/perfect-scrollbar.min.css" />
-<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
 <main id="ypcj" class="container-fluid">
     <div class="row">
         <!----------------约拍场景排行榜 开始----------------------->
@@ -10,7 +9,7 @@
                 <ul>
                     <% ypcjs.data.forEach(function(ypcj, index){ %>
                     <li class="clearfix <%= index %>">
-                        <a href="ypcj?id=<%= ypcj.id %>" class="show">
+                        <a href="javascript:changeYpcj(<%= index %>)" class="show">
                             <img src="<%= ypcj.cover %>" class="img-responsive pull-left" />
                             <div class="info pull-left">
                                 <h4><%= ypcj.name %></h4>
