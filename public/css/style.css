@@ -1,16 +1,27 @@
-
 ul{padding: 0; margin: 0}
+li{list-style: none;}
 /* -------------------------------------- 公共头部 ---------------------------------- */
 #header{height: 60px; background-color: #000; position: relative; z-index: 2}
 #headerNav{line-height: 60px;}
 #headerNav a{color: #FFF; font-size: 14px; text-align: center; display: inline-block; width: 80px; text-decoration: none}
 #headerNav a:hover,#headerNav a.on{background-color: #FFF; color: #000}
-#logo{background: url("../images/logo.png") center center no-repeat; width: 123px; height: 40px; margin: 10px 50px; display: block}
-/* -------------------------------------- 约拍场景 ---------------------------------- */
+#logo{/*background: url("../images/logo.png") center center no-repeat;*/ width: 123px; height: 40px; margin: 10px 50px; color: #fff;font-size: 30px; display: block}
 
+/* -------------------------------------- 约拍场景 ---------------------------------- */
 #ypcjTop{padding: 0; }
 #ypcjTopMain{position: relative}
-#ypcjTop .items li{list-style: none; line-height: 30px; border-bottom: 1px solid #e3e3e3; display: block}
+#ypcjTop .items li{ line-height: 30px; border-bottom: 1px solid #e3e3e3; display: block}
+#ypcjTop .items li:hover,#ypcjTop .items li.on{background-color: #f5f5f5;}
 #ypcjTop .items img{width: 40%; height: auto; margin:20px 10px;}
 #ypcjTop .items .info{width: 50%;}
 #ypcjTop .items p{font-size: 12px;}
+
+/* -------------------------------------- 摄影 ---------------------------------- */
+#syMain{padding: 0}
+#syMain header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#syMain li{padding: 20px 0; border-bottom: 1px solid #EEEEEE}
+#syMain img.avatar{width: 200px; height: 200px; border-radius: 100px; margin: 0 30px;}
+
+#syMain .ablum{margin-left: 100px;}
+#syMain .ablum a{width: 280px; height: 187px; margin-left: 20px;}
+#syMain .ablum img{width: 280px; height: 187px;}
