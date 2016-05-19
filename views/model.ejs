@@ -1,0 +1,37 @@
+<% include header  %>
+<main id="model">
+    <!----------------摄影排行榜 开始----------------------->
+    <header class="container-fluid">全部 > <%= models.count %>位模特</header>
+    <article id="modelMain" class="container-fluid items">
+        <ul>
+            <% models.data.forEach(function(model, index){ %>
+            <li class="row">
+                <div class="modeler col-lg-4 col-sm-4">
+                    <div class="row">
+                        <a href="javascript:void(0)" class="avatar ashow col-lg-4 col-sm-4"><img src="<%= model.cover %>" class="img-responsive" /> </a>
+                        <div class="info col-lg-8 col-sm-8">
+                            <h3><%= model.name %></h3>
+                            <p class="hits text-muted">风格：<%= model.style %></p>
+                            <p class="hits text-muted">认证：<%= model.tags %></p>
+                            <p class="text-muted">尺度：<%= model.scale %></p>
+                            <p class="text-muted">报酬：<%= model.mark %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ablum detail<%= index %> col-lg-8 col-sm-8">
+                    <div class="row">
+                        <% model.imageList.forEach(function(image, index){ %>
+                        <% if(index < 4){ %>
+                        <a href="javascript:void(0)" class="show col-lg-3 col-sm-3"><img src="<%= image %>" class="img-responsive detailImg<%= index %>" /></a>
+                        <% } %>
+                        <% }) %>
+                    </div>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </article>
+    <!----------------摄影排行榜 结束----------------------->
+</main>
+<% include footer %>
+<script src="/js/model.js"></script>

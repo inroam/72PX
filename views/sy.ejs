@@ -1,42 +1,37 @@
 <% include header  %>
-<main id="sy" class="container-fluid">
-    <div class="row">
-        <!----------------摄影风格 开始----------------------->
-        <aside id="syTop" class="col-lg-2">
-
-        </aside>
-        <!----------------摄影风格 结束----------------------->
-        <!----------------摄影排行榜 开始----------------------->
-        <article id="syMain" class="col-lg-10">
-            <header>全部 > <%= sys.count %>位摄影师</header>
-            <section id="syItems" class="contentHolder items">
-                <ul>
-                    <% sys.data.forEach(function(sy, index){ %>
-                    <li class="clearfix <%= index %> row">
-                        <a href="javascript:changeYpcj(<%= index %>)" class="show pull-left">
-                            <img src="<%= sy.cover %>" class="avatar img-responsive pull-left" />
-                            <div class="info pull-left">
-                                <h4><%= sy.name %></h4>
-                                <p class="hits text-info">擅长风格：<%= sy.style %></p>
-                                <p class="hits text-info">认证信息：<%= sy.tags %></p>
-                                <p class="text-info">器材：<%= sy.camera %></p>
-                                <p class="text-info">镜头：<%= sy.shot %></p>
-                            </div>
-                        </a>
-                        <div class="ablum detail<%= index %> pull-left">
-                            <% sy.imageList.forEach(function(image, index){ %>
-                            <% if(index < 3){ %>
-                            <a href="javascript:void(0)" class="show pull-left"><img src="<%= image %>" class="img-responsive detailImg<%= index %>" /></a>
-                            <% } %>
-                            <% }) %>
+<main id="sy">
+    <!----------------摄影排行榜 开始----------------------->
+    <header class="container-fluid">全部 > <%= sys.count %>位摄影师</header>
+    <article id="syMain" class="container-fluid items">
+        <ul>
+            <% sys.data.forEach(function(sy, index){ %>
+            <li class="row">
+                <div class="syer col-lg-4 col-sm-4">
+                    <div class="row">
+                        <a href="javascript:void(0)" class="avatar ashow col-lg-4 col-sm-4"><img src="<%= sy.cover %>" class="img-responsive" /> </a>
+                        <div class="info col-lg-8 col-sm-8">
+                            <h3><%= sy.name %></h3>
+                            <p class="hits text-muted">风格：<%= sy.style %></p>
+                            <p class="hits text-muted">认证：<%= sy.tags %></p>
+                            <p class="text-muted">器材：<%= sy.camera %></p>
+                            <p class="text-muted">镜头：<%= sy.shot %></p>
                         </div>
-                    </li>
-                    <% }) %>
-                </ul>
-            </section>
-        </article>
-        <!----------------摄影排行榜 结束----------------------->
-    </div>
+                    </div>
+                </div>
+                <div class="ablum detail<%= index %> col-lg-8 col-sm-8">
+                    <div class="row">
+                        <% sy.imageList.forEach(function(image, index){ %>
+                        <% if(index < 4){ %>
+                        <a href="javascript:void(0)" class="show col-lg-3 col-sm-3"><img src="<%= image %>" class="img-responsive detailImg<%= index %>" /></a>
+                        <% } %>
+                        <% }) %>
+                    </div>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </article>
+    <!----------------摄影排行榜 结束----------------------->
 </main>
 <% include footer %>
 <script src="/js/sy.js"></script>

@@ -5,10 +5,10 @@
       "id" : 1,
       "name": "跃进路1958",
       "hits": "97",
-      "cover": "images/1.jpg",
+      "cover": "images/ypcj/1.jpg",
       "imageList" : [
-        "images/1.jpg",
-        "images/2.jpg"
+        "images/ypcj/1.jpg",
+        "images/ypcj/2.jpg"
       ],
       "desc" : "跃进路1958位于四川省绵阳市涪城区工区街道，是绵阳首个文化之街、红色跃进路红色跃进路历史之街和商业之街，是全国著名的电子工业一条路",
       "lat" : "104.748363",
@@ -19,9 +19,9 @@
       "id" : 2,
       "name": "小雅书屋",
       "hits": "20",
-      "cover": "images/3.jpg",
+      "cover": "images/ypcj/3.jpg",
       "imageList" : [
-        "images/3.jpg"
+        "images/ypcj/3.jpg"
       ],
       "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
       "lat" : "104.762448",
@@ -32,9 +32,9 @@
       "id" : 3,
       "name": "火车站后面地质队",
       "hits": "530",
-      "cover": "images/4.jpg",
+      "cover": "images/ypcj/4.jpg",
       "imageList" : [
-        "images/4.jpg"
+        "images/ypcj/4.jpg"
       ],
       "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
       "lat" : "104.721485",
@@ -45,9 +45,9 @@
       "id" : 4,
       "name": "二环路莲花寺",
       "hits": "97",
-      "cover": "images/5.jpg",
+      "cover": "images/ypcj/5.jpg",
       "imageList" : [
-        "images/5.jpg"
+        "images/ypcj/5.jpg"
       ],
       "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
       "lat" : "104.724935",
@@ -58,9 +58,9 @@
       "id" : 5,
       "name": "梅西百货天台",
       "hits": "97",
-      "cover": "images/6.jpg",
+      "cover": "images/ypcj/6.jpg",
       "imageList" : [
-        "images/6.jpg"
+        "images/ypcj/6.jpg"
       ],
       "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
       "lat" : "104.759574",
@@ -71,9 +71,9 @@
       "id" : 6,
       "name": "江油诗歌小镇河边水泥厂",
       "hits": "97",
-      "cover": "images/7.jpg",
+      "cover": "images/ypcj/7.jpg",
       "imageList" : [
-        "images/7.jpg"
+        "images/ypcj/7.jpg"
       ],
       "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
       "lat" : "104.720767",
@@ -84,9 +84,9 @@
       "id" : 7,
       "name": "北川千佛山",
       "hits": "97",
-      "cover": "images/8.jpg",
+      "cover": "images/ypcj/8.jpg",
       "imageList" : [
-        "images/8.jpg"
+        "images/ypcj/8.jpg"
       ],
       "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
       "lat" : "104.303953",

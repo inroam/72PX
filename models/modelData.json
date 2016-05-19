@@ -1,0 +1,76 @@
+{
+  "name" : "模特",
+  "count" : 4,
+  "data": [{
+      "id" : 1,
+      "name": "陈佳",
+      "hits": "97",
+      "cover": "images/model/7.jpg",
+      "imageList" : [
+        "images/model/7/1.jpg",
+        "images/model/7/2.jpg",
+        "images/model/7/3.jpg",
+        "images/model/7/4.jpg"
+      ],
+      "desc" : "",
+      "style" : "擅长各种风格",
+      "tags" : "四川文化学院模特",
+      "scale" : "私房除外均可",
+      "size" : "身高172CM",
+      "mark" : "创作互勉"
+    },
+    {
+      "id" : 2,
+      "name": "水源西沟",
+      "hits": "20",
+      "cover": "images/model/2.jpg",
+      "imageList" : [
+        "images/model/2/1.jpg",
+        "images/model/2/2.jpg",
+        "images/model/2/3.jpg",
+        "images/model/2/4.jpg"
+      ],
+      "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
+      "style" : "注重细节和少女情怀",
+      "tags" : "艺术专业模特",
+      "scale" : "私房除外均可",
+      "shot" : "Sigma 50MM F1.4",
+      "mark" : "创作互勉"
+    },
+    {
+      "id" : 3,
+      "name": "草莓大佬",
+      "hits": "530",
+      "cover": "images/model/3.jpg",
+      "imageList" : [
+        "images/model/3/1.jpg",
+        "images/model/3/2.jpg",
+        "images/model/3/3.jpg",
+        "images/model/3/4.jpg"
+      ],
+      "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
+      "style" : "擅长各种风格",
+      "tags" : "罗江资深人像摄影师",
+      "scale" : "私房除外均可",
+      "shot" : "Sigma 50MM F1.4",
+      "mark" : "创作互勉"
+    },
+    {
+      "id" : 4,
+      "name": "余温",
+      "hits": "97",
+      "cover": "images/model/4.jpg",
+      "imageList" : [
+        "images/model/4/1.jpg",
+        "images/model/4/2.jpg",
+        "images/model/4/3.jpg",
+        "images/model/4/4.jpg"
+      ],
+      "desc":"一入，尽别有洞天，书店不大，似乎还有二楼，一排排文字安静的停顿在幽暗灯光的港湾，灵魂似乎停止了。书绝顶的好且专业",
+      "style" : "擅长生活记录",
+      "tags" : "72PX人像摄影师",
+      "scale" : "私房除外均可",
+      "shot" : "CANNON 35MM F1.4",
+      "mark" : "创作互勉"
+    }]
+}

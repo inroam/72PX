@@ -1,27 +1,61 @@
 ul{padding: 0; margin: 0}
 li{list-style: none;}
+body{color: #333}
+a{color: #aaa}
+
+@media (min-width:768px) and (max-width: 1000px) {
+    .smHidden{display: none}
+}
+
 /* -------------------------------------- 公共头部 ---------------------------------- */
 #header{height: 60px; background-color: #000; position: relative; z-index: 2}
 #headerNav{line-height: 60px;}
-#headerNav a{color: #FFF; font-size: 14px; text-align: center; display: inline-block; width: 80px; text-decoration: none}
-#headerNav a:hover,#headerNav a.on{background-color: #FFF; color: #000}
+#headerNav a{color: #F4F4F4; font-size: 14px; text-align: center; display: inline-block; width: 80px; text-decoration: none}
+#headerNav a:hover,#headerNav a.on{background-color: #F4F4F4; color: #000}
 #logo{/*background: url("../images/logo.png") center center no-repeat;*/ width: 123px; height: 40px; margin: 10px 50px; color: #fff;font-size: 30px; display: block}
+
+/* -------------------------------------- 72PX首页 ---------------------------------- */
+#home{background-size:cover; background-position: center center; background-attachment: fixed; }
 
 /* -------------------------------------- 约拍场景 ---------------------------------- */
 #ypcjTop{padding: 0; }
 #ypcjTopMain{position: relative}
-#ypcjTop .items li{ line-height: 30px; border-bottom: 1px solid #e3e3e3; display: block}
+#ypcjTop .items li{ border-bottom: 1px solid #e3e3e3; padding: 10px 0; cursor: pointer }
 #ypcjTop .items li:hover,#ypcjTop .items li.on{background-color: #f5f5f5;}
-#ypcjTop .items img{width: 40%; height: auto; margin:20px 10px;}
-#ypcjTop .items .info{width: 50%;}
+#ypcjTop .items img{height: auto;  margin-top:15px; border: 1px solid #e3e3e3; padding: 2px}
+#ypcjTop .items .info{}
 #ypcjTop .items p{font-size: 12px;}
 
 /* -------------------------------------- 摄影 ---------------------------------- */
-#syMain{padding: 0}
-#syMain header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
-#syMain li{padding: 20px 0; border-bottom: 1px solid #EEEEEE}
-#syMain img.avatar{width: 200px; height: 200px; border-radius: 100px; margin: 0 30px;}
+#syTop{background-color: #F4F4F4}
 
-#syMain .ablum{margin-left: 100px;}
-#syMain .ablum a{width: 280px; height: 187px; margin-left: 20px;}
-#syMain .ablum img{width: 280px; height: 187px;}
+#sy header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#syMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#syMain li:hover{background-color: #F4F4F4}
+
+#syMain .avatar img{border-radius: 100px; }
+
+/* -------------------------------------- 模特 ---------------------------------- */
+#modelTop{background-color: #F4F4F4}
+
+#model header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#modelMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#modelMain li:hover{background-color: #F4F4F4}
+#modelMain .avatar img{border-radius: 100px; }
+
+
+/* -------------------------------------- 搭配 ---------------------------------- */
+#dressTop{background-color: #F4F4F4}
+
+#dress header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#dressMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#dressMain li:hover{background-color: #F4F4F4}
+#dressMain .avatar img{border-radius: 100px; }
+
+/* -------------------------------------- 化妆 ---------------------------------- */
+#prinkTop{background-color: #F4F4F4}
+
+#prink header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#prinkMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#prinkMain li:hover{background-color: #F4F4F4}
+#prinkMain .avatar img{border-radius: 100px; }
