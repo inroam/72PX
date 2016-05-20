@@ -1,11 +1,11 @@
 var express = require('express'),
-    homes = require("../models/homeData.json");
-    scenes = require("../models/scenesData.json");
-    sys = require("../models/syData.json");
-    models = require("../models/modelData.json");
-    Collocations = require("../models/collocations.js"); // 引用搭配模型
-    prinks = require("../models/prinkData.json");
-    router = express.Router(),
+    homes = require("../models/homeData.json"),
+    scenes = require("../models/scenesData.json"),
+    sys = require("../models/syData.json"),
+    models = require("../models/modelData.json"),
+    Collocations = require("../models/collocationsModel.js"), // 引用搭配模型
+    prinks = require("../models/prinkData.json"),
+    router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -51,9 +51,8 @@ router.get('/model', function(req, res, next) {
 
 /* 搭配应用*/
 router.get('/collocations', function(req, res, next) {
-
-    var collocations = null;
-    Collocations.find(function(err,collocations){
+    var collocations = new  Collocations();
+    collocations.getAll(function(err,collocations){
         //查询约拍场景
         res.render('collocations', {
             title: '72PX搭配',
@@ -61,7 +60,9 @@ router.get('/collocations', function(req, res, next) {
             collocations : collocations
         });
     });
-    console.log(collocations);
+    Collocations.getOne(function (err, animals) {
+        console.log(animals);
+    });
 
 });
 
