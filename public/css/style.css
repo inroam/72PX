@@ -15,16 +15,30 @@ a{color: #aaa}
 #logo{/*background: url("../images/logo.png") center center no-repeat;*/ width: 123px; height: 40px; margin: 10px 50px; color: #fff;font-size: 30px; display: block}
 
 /* -------------------------------------- 72PX首页 ---------------------------------- */
-#home{background-size:cover; background-position: center center; background-attachment: fixed; }
+#home{background-size:cover; background-position: center center; background-attachment: fixed; position: relative}
+
+#homeIntro{background:url(../images/intro.png) no-repeat center center; width: 509px;  height: 134px;  }
+#homeEnter{opacity:0.8;filter:alpha(opacity=80);}
+#homeEnter a{background:url(../images/enter.png) no-repeat center center;}
+
+#homeFooter{position:absolute; left:0; bottom:0; width:100%; height:95px; background-color:rgba(0,0,0,0.7);}
+#homeDesc p{margin-top: 5px;}
+
+#homeSns{position: relative}
+#homeSns a{position: absolute; top: -5px;}
+#homeSns a.sina{background:url(../images/sina.png) no-repeat center center; width: 95px; height: 90px;}
+#homeSns a.wechat{background:url(../images/wechat.png) no-repeat center center; width: 95px; height: 90px; left: 120px;}
+
+
 
 /* -------------------------------------- 约拍场景 ---------------------------------- */
-#ypcjTop{padding: 0; }
-#ypcjTopMain{position: relative}
-#ypcjTop .items li{ border-bottom: 1px solid #e3e3e3; padding: 10px 0; cursor: pointer }
-#ypcjTop .items li:hover,#ypcjTop .items li.on{background-color: #f5f5f5;}
-#ypcjTop .items img{height: auto;  margin-top:15px; border: 1px solid #e3e3e3; padding: 2px}
-#ypcjTop .items .info{}
-#ypcjTop .items p{font-size: 12px;}
+#scenesTop{padding: 0; }
+#scenesTopMain{position: relative}
+#scenesTop .items li{ border-bottom: 1px solid #e3e3e3; padding: 10px 0; cursor: pointer }
+#scenesTop .items li:hover,#scenesTop .items li.on{background-color: #f5f5f5;}
+#scenesTop .items img{height: auto;  margin-top:15px; border: 1px solid #e3e3e3; padding: 2px}
+#scenesTop .items .info{}
+#scenesTop .items p{font-size: 12px;}
 
 /* -------------------------------------- 摄影 ---------------------------------- */
 #syTop{background-color: #F4F4F4}
@@ -47,10 +61,10 @@ a{color: #aaa}
 /* -------------------------------------- 搭配 ---------------------------------- */
 #dressTop{background-color: #F4F4F4}
 
-#dress header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
-#dressMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
-#dressMain li:hover{background-color: #F4F4F4}
-#dressMain .avatar img{border-radius: 100px; }
+#collocations header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#collocationsMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#collocationsMain li:hover{background-color: #F4F4F4}
+#collocationsMain .avatar img{border-radius: 100px; }
 
 /* -------------------------------------- 化妆 ---------------------------------- */
 #prinkTop{background-color: #F4F4F4}

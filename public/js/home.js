@@ -7,3 +7,7 @@ var height = $(window).height();
 home.height((height-60)+"px");
 home.css("background-image","url(../"+bg+")");
 
+$(window).resize(function () {
+    home.height(($(window).height()-60)+"px");
+});
+

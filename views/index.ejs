@@ -1,6 +1,22 @@
 <%- include header  %>
-<div id="home" class="container-fluid" data-bg="images/bg/<%= bg %>.jpg">
-
-</div>
+<main id="home" class="container-fluid" data-bg="images/bg/<%= bg %>.jpg">
+    <article class="row hidden">
+        <div id="homeIntro" class="col-lg-6"></div>
+        <div id="homeEnter" class="col-lg-6"><a href="/portal.php"></a></div>
+    </article>
+    <section id="homeFooter" class="container-fluid">
+        <div class="row">
+            <div id="homeDesc" class="col-lg-offset-1 col-lg-7 col-sm-6">
+                <p class="text-muted">这里的每一件作品都曾代表着一段故事&nbsp;</p>
+                <p class="text-muted">怦然心动 一点都不难，该犯难的是&nbsp;，如何停止蠢蠢欲动&nbsp;</p>
+                <p class="copyright text-muted">Powered by 72PX摄影 © 2014 72PX.</p>
+            </div>
+            <div id="homeSns" class="col-lg-4 col-sm-4">
+                <a href="http://weibo.com/my72px" target="_blank"  class="sina" title="72PX摄影官方微博"></a>
+                <a href="http://jq.qq.com/?_wv=1027&k=dbaOUM" target="_blank" class="wechat" title="点击链接加入群【72PX摄影】："></a>
+            </div>
+        </div>
+    </section>
+</main>
 <%- include footer %>
 <script src="/js/home.js"></script>

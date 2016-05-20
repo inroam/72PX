@@ -1,9 +1,9 @@
 var express = require('express'),
     homes = require("../models/homeData.json");
-    ypcjs = require("../models/ypcjData.json");
+    scenes = require("../models/scenesData.json");
     sys = require("../models/syData.json");
     models = require("../models/modelData.json");
-    dresss = require("../models/dressData.json");
+    Collocations = require("../models/collocations.js"); // 引用搭配模型
     prinks = require("../models/prinkData.json");
     router = express.Router(),
 
@@ -11,21 +11,21 @@ var express = require('express'),
 router.get('/', function(req, res, next) {
     var max = 3;
     var bgIndex = Math.ceil(Math.random()*max); //获取随机图片
-  res.render('index', {
-      title : '72PX',
-      action : 'index',
-      homes : 'homes',
-      bg :  bgIndex
-  });
+    res.render('index', {
+        title : '72PX',
+        action : 'index',
+        homes : 'homes',
+        bg :  bgIndex
+    });
 });
 
 /* 场景应用*/
-router.get('/ypcj', function(req, res, next) {
+router.get('/scenes', function(req, res, next) {
     //查询约拍场景
-    res.render('ypcj', {
-        title: '72PX约拍场景',
-        action : 'ypcj',
-        ypcjs : ypcjs
+    res.render('scenes', {
+        title: '72PX场景',
+        action : 'scenes',
+        scenes : scenes
     });
 });
 
@@ -50,13 +50,19 @@ router.get('/model', function(req, res, next) {
 });
 
 /* 搭配应用*/
-router.get('/dress', function(req, res, next) {
-    //查询约拍场景
-    res.render('dress', {
-        title: '72PX搭配',
-        action : 'dress',
-        dresss : dresss
+router.get('/collocations', function(req, res, next) {
+
+    var collocations = null;
+    Collocations.find(function(err,collocations){
+        //查询约拍场景
+        res.render('collocations', {
+            title: '72PX搭配',
+            action : 'collocations',
+            collocations : collocations
+        });
     });
+    console.log(collocations);
+
 });
 
 /* 化妆应用*/
