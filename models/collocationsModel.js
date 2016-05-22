@@ -22,13 +22,13 @@ var CollocationsSchema = new mongoose.Schema({
     mark : String
 });
 
-// 获取集合所有数据 必须加上参数
-CollocationsSchema.methods.getAll = function(cb){
-    return this.model("collocations").find(cb);
+// 获取集合所有数据 如果不提供回调函数，所有这些方法都返回 Query 对象，它们都可以被再次修改（比如增加选项、键等），直到调用 exec 方法
+CollocationsSchema.methods.getAll = function(callback){
+    return this.model("collocations").find(callback);
 }
 // 获取集合中的一个数据  静态方法 可直接调用
-CollocationsSchema.statics.getOne = function(cb){
-    this.find(cb).limit(1);
+CollocationsSchema.statics.getOne = function(callback){
+    this.findOne(callback);
 }
 
 // 将搭配Schema 发布为 搭配模型
