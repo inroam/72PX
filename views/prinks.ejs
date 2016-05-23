@@ -1,10 +1,10 @@
 <% include header  %>
-<main id="prink">
+<main id="prinks">
     <!----------------摄影排行榜 开始----------------------->
-    <header class="container-fluid">全部 > <%= prinks.count %>位化妆师</header>
-    <article id="prinkMain" class="container-fluid items">
+    <header class="container-fluid">全部 > 位化妆师</header>
+    <article id="prinksMain" class="container-fluid items">
         <ul>
-            <% prinks.data.forEach(function(prink, index){ %>
+            <% prinks.forEach(function(prink, index){ %>
             <li class="row">
                 <div class="prinker col-lg-4 col-sm-4">
                     <div class="row">

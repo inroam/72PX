@@ -41,21 +41,21 @@ a{color: #aaa}
 #scenesTop .items p{font-size: 12px;}
 
 /* -------------------------------------- 摄影 ---------------------------------- */
-#syTop{background-color: #F4F4F4}
+#photographersTop{background-color: #F4F4F4}
 
-#sy header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
-#syMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
-#syMain li:hover{background-color: #F4F4F4}
+#photographers header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#photographersMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#photographersMain li:hover{background-color: #F4F4F4}
 
-#syMain .avatar img{border-radius: 100px; }
+#photographersMain .avatar img{border-radius: 100px; }
 
 /* -------------------------------------- 模特 ---------------------------------- */
-#modelTop{background-color: #F4F4F4}
+#modelsTop{background-color: #F4F4F4}
 
-#model header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
-#modelMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
-#modelMain li:hover{background-color: #F4F4F4}
-#modelMain .avatar img{border-radius: 100px; }
+#models header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#modelsMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#modelsMain li:hover{background-color: #F4F4F4}
+#modelsMain .avatar img{border-radius: 100px; }
 
 
 /* -------------------------------------- 搭配 ---------------------------------- */
@@ -67,9 +67,9 @@ a{color: #aaa}
 #collocationsMain .avatar img{border-radius: 100px; }
 
 /* -------------------------------------- 化妆 ---------------------------------- */
-#prinkTop{background-color: #F4F4F4}
+#prinksTop{background-color: #F4F4F4}
 
-#prink header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
-#prinkMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
-#prinkMain li:hover{background-color: #F4F4F4}
-#prinkMain .avatar img{border-radius: 100px; }
+#prinks header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#prinksMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
+#prinksMain li:hover{background-color: #F4F4F4}
+#prinksMain .avatar img{border-radius: 100px; }

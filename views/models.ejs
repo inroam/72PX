@@ -1,10 +1,10 @@
 <% include header  %>
-<main id="model">
+<main id="models">
     <!----------------摄影排行榜 开始----------------------->
-    <header class="container-fluid">全部 > <%= models.count %>位模特</header>
-    <article id="modelMain" class="container-fluid items">
+    <header class="container-fluid">全部 > 位模特</header>
+    <article id="modelsMain" class="container-fluid items">
         <ul>
-            <% models.data.forEach(function(model, index){ %>
+            <% models.forEach(function(model, index){ %>
             <li class="row">
                 <div class="modeler col-lg-4 col-sm-4">
                     <div class="row">
@@ -34,4 +34,4 @@
     <!----------------摄影排行榜 结束----------------------->
 </main>
 <% include footer %>
-<script src="/js/model.js"></script>
+<script src="/js/models.js"></script>

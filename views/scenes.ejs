@@ -7,7 +7,7 @@
             <a href="javascript:void(0)" title="<%= scenes.name %>" class="show"><img src="images/scenes/topBg.jpg" class="img-responsive"></a>
             <section id="scenesTopMain" class="contentHolder items">
                 <ul>
-                    <% scenes.data.forEach(function(scene, index){ %>
+                    <% scenes.forEach(function(scene, index){ %>
                     <li class="clearfix" onclick="javascript:changeScenes(<%= index %>)">
                         <a href="javascript:void(0)" class="show col-lg-4 col-sm-4"><img src="<%= scene.cover %>" class="img-responsive pull-left" /></a>
                         <div class="info col-lg-8 col-sm-8">

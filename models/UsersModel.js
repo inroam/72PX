@@ -18,6 +18,11 @@ var UsersSchema = new mongoose.Schema({
 
 });
 
+// 读取用户
+UsersSchema.statics.getByUserName = function(name, callback){
+    this.findOne({name : name}, callback);
+}
+
 // 将72PX配置SSchema 发布为 配置模型
 var Users = db.model("users",UsersSchema);
 

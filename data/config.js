@@ -2,6 +2,7 @@
  * Created by hujj on 2016/5/20.
  */
 var config = {
+    cookieSecret: '72PX',
     host : "localhost", // 主机名
     database : "72PX" , // 数据名
     user : "", // 数据库用户名

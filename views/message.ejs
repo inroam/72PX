@@ -1,0 +1,13 @@
+<% include header  %>
+<main id="login">
+    <h1>72PX消息通知</h1>
+   <article>
+       <% if (success) { %>
+       <div><%= success %></div>
+       <% } %>
+       <% if (error) { %>
+       <div><%= error %> </div>
+       <% } %>
+   </article>
+</main>
+<% include footer %>

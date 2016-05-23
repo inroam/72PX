@@ -1,7 +1,23 @@
 <% include header  %>
 <main id="register">
-
-    <!----------------摄影排行榜 结束----------------------->
+    <h1>72PX用户登录</h1>
+    <form method="post">
+        <div class="form-control">
+            <label for="userName">账 号：</label>
+            <input type="text" name="userName" placeholder="请输入正确的用户名" />
+        </div>
+        <div class="form-control">
+            <label for="userPwd">密 码：</label>
+            <input type="password" name="userPwd" />
+        </div>
+        <div class="form-control">
+            <label for="userPwdRepeat">确认密码：</label>
+            <input type="password" name="userPwdRepeat" />
+        </div>
+        <div class="form-control">
+            <input type="submit" class="btn-primary btn-lg" value="注册" />
+        </div>
+    </form>
 </main>
 <% include footer %>
-<script src="/js/register.js"></script>
+<script src="/js/user.js"></script>

@@ -24,19 +24,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(flash());
+//app.use(session());
 // 引入会话机制，并存入数据库
 app.use(session({
-  secret: settings.cookieSecret,
-  key: settings.db,//cookie name
-  cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//30 days
+  resave:false,//添加这行
+  saveUninitialized: true,//添加这行
+  secret: config.cookieSecret,
   store: new MongoStore({
-    db: config.database,
-    host: config.host,
-    port: config.port
+    url: 'mongodb://localhost/72PX'
   })
 }));
-app.use(flash());
-app.use(session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 router(app); //实现路由引用入口
