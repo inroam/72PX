@@ -1,4 +1,7 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<% if("undefined" != typeof jsGroup) { jsGroup.forEach(function(js, index){ %>
+<script src="<%= js %>"></script>
+<% }) } %>
 </body>
 </html>

@@ -1,7 +1,14 @@
 <% include header  %>
 <main id="photographers">
     <!----------------摄影排行榜 开始----------------------->
-    <header class="container-fluid">全部 > 位摄影师</header>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">全部 > 位摄影师</div>
+            <div class="col-lg-6 text-right">
+                <a href="/works/create">投稿</a>
+            </div>
+        </div>
+    </header>
     <article id="photographersMain" class="container-fluid items">
         <ul>
             <% photographers.forEach(function(photographer, index){ %>

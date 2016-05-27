@@ -12,6 +12,8 @@ var PrinksController = function(router){
       });
     });
   });
+
+
 }
 
 module.exports = PrinksController;

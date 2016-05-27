@@ -49,6 +49,9 @@ a{color: #aaa}
 
 #photographersMain .avatar img{border-radius: 100px; }
 
+
+#photographers form{margin: 50px auto;}
+#photographers form label{width: 100px; margin-right: 20px;}
 /* -------------------------------------- 模特 ---------------------------------- */
 #modelsTop{background-color: #F4F4F4}
 
@@ -73,3 +76,6 @@ a{color: #aaa}
 #prinksMain li{ border-bottom: 1px solid #EEEEEE; padding: 30px 0}
 #prinksMain li:hover{background-color: #F4F4F4}
 #prinksMain .avatar img{border-radius: 100px; }
+
+
+

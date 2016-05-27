@@ -1,0 +1,22 @@
+<% include ../header  %>
+<main id="users">
+    <!----------------作品详情 开始----------------------->
+    <header id="usersHeder" style="background-image: url(/images/user/headerBg.jpg)">
+        <div class="info container center-block">
+            <h2><%= user.name %></h2>
+            <p class="status"><span>关注 ：<%= user.follow %></span><span>粉丝 ：<%= user.fans %></span></p>
+            <p class="desc">简介：<%= user.desc %></p>
+        </div>
+    </header>
+    <section id="usersWorksMain" class="container items">
+        <ul class="row">
+            <% works.forEach(function(work, index){ %>
+            <li class="col-lg-3 col-sm-3">
+                <a href="/works/detail/<%= work._id %>" class="show"><img src="/<%= work.galleryIds[0].url %>" class="img-responsive" /></a>
+            </li>
+            <% }) %>
+        </ul>
+    </section>
+    <!----------------作品详情 结束----------------------->
+</main>
+<% include ../footer %>

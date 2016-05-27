@@ -1,0 +1,21 @@
+<% include ../header  %>
+<main id="worksDetail">
+    <!----------------作品详情 开始----------------------->
+    <header id="worksDetailHeder" style="background-image: url(/<%= works.galleryIds[0].url %>)">
+        <div class="shadow"></div>
+        <div class="info container center-block">
+            <h2><%= works.title %></h2>
+            <p class="lead"><span class="author">作者：<a href="/users/<%= works.userId %>">阿儿歌</a></span><time>2016-05-26 12:00:21</time><small class="pull-right">阅读：121</small></p>
+        </div>
+    </header>
+    <article id="worksDetailArticle" class="container items">
+        <header id="worksArticleHeader"><%- works.content %></header>
+        <% works.galleryIds.forEach(function(gallery, index){ %>
+        <div class="thumbnail col-lg-12 col-sm-12">
+            <a href="javascript:void(0)" class="show"><img src="/<%= gallery.url %>" class="img-responsive" /></a>
+        </div>
+        <% }) %>
+    </article>
+    <!----------------作品详情 结束----------------------->
+</main>
+<% include ../footer %>

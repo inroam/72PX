@@ -1,0 +1,19 @@
+#works header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#worksMain{margin-top: 20px;}
+#worksContent{max-height: 400px; min-height: 100px;}
+
+#uploader{color: #838383;  font-size: 12px; position: relative; padding: 45px 15px 15px; margin: 15px 0; background-color: #fafafa; box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);  border:1px solid #eee;  }
+
+
+
+
+#worksDetailHeder{height: 260px; overflow: hidden; position: relative; background-position: center center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
+#worksDetailHeder .shadow{ height: 260px; width: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.6); }
+#worksDetailHeder .info{position:relative; top: 110px; z-index:2; color: #fff; background:none}
+#worksDetailHeder h2{font-size: 40px;}
+#worksDetailHeder p{font-size: 14px; margin-top: 30px; color: #aaa}
+#worksDetailHeder .author{margin-right: 20px; color: #fff}
+#worksDetailHeder a{color: #fff}
+
+#worksArticleHeader{width: 96%; margin: 30px auto 0 auto }
+#worksDetailArticle .thumbnail{border: none}

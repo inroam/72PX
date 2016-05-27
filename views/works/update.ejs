@@ -1,0 +1,44 @@
+<% include header  %>
+<main id="photographers">
+    <!----------------摄影排行榜 开始----------------------->
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">全部 > 位摄影师</div>
+            <div class="col-lg-6 text-right">
+                <a href="photographers/create/">新建摄影</a>
+            </div>
+        </div>
+    </header>
+    <article id="photographersMain" class="container-fluid items">
+        <ul>
+            <% photographers.forEach(function(photographer, index){ %>
+            <li class="row">
+                <div class="photographer col-lg-4 col-sm-4">
+                    <div class="row">
+                        <a href="javascript:void(0)" class="avatar ashow col-lg-4 col-sm-4"><img src="<%= photographer.cover %>" class="img-responsive" /> </a>
+                        <div class="info col-lg-8 col-sm-8">
+                            <h3><%= photographer.name %></h3>
+                            <p class="hits text-muted">风格：<%= photographer.style %></p>
+                            <p class="hits text-muted">认证：<%= photographer.tags %></p>
+                            <p class="text-muted">器材：<%= photographer.camera %></p>
+                            <p class="text-muted">镜头：<%= photographer.shot %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ablum detail<%= index %> col-lg-8 col-sm-8">
+                    <div class="row">
+                        <% photographer.imageList.forEach(function(image, index){ %>
+                        <% if(index < 4){ %>
+                        <a href="javascript:void(0)" class="show col-lg-3 col-sm-3"><img src="<%= image %>" class="img-responsive detailImg<%= index %>" /></a>
+                        <% } %>
+                        <% }) %>
+                    </div>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </article>
+    <!----------------摄影排行榜 结束----------------------->
+</main>
+<% include footer %>
+<script src="/js/photographers.js"></script>

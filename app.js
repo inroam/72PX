@@ -5,12 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var config = require('./data/config');
-var session = require('express-session');
+var session = require('express-session'); //会话
 var MongoStore = require('connect-mongo')(session);
-var flash = require('connect-flash');
+var flash = require('connect-flash'); // 消息模块
 
 
-var router = require('./routes/index');
+var router = require('./middleware/index');
 
 var app = express();
 
@@ -35,7 +35,12 @@ app.use(session({
     url: 'mongodb://localhost/72PX'
   })
 }));
+
+// 资源文件
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 附件静态资源
+app.use(express.static(path.join(__dirname, 'data/attachment')));
 
 router(app); //实现路由引用入口
 

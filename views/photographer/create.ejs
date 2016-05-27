@@ -1,0 +1,76 @@
+<% include ../header  %>
+<main id="photographers">
+    <!----------------摄影排行榜 开始----------------------->
+    <header class="container-fluid">
+        <div class="clearfix">
+            <div class="col-lg-6">全部 > 位摄影师</div>
+            <div class="col-lg-6 text-right">
+                <a href="photographers/create/">新建摄影</a>
+            </div>
+        </div>
+    </header>
+    <article id="photographersMain" class="container-fluid items">
+        <form method="post" enctype='multipart/form-data'>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">昵 称 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="name" placeholder="请输入正确的昵称"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">头 像 ：</label>
+                <div class="pull-left">
+                    <input type="file" name='cover'/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">相 册 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="gallery" />
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">描 述 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="desc" />
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">风 格 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="style" />
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">标 签 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="tags" />
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">器 材 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="camera"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">镜 头 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="shot"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="pull-left  text-right">备 注 ：</label>
+                <div class="pull-left">
+                    <input type="text" class="input-sm" name="mark"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <input type="submit" value="提交" class="btn-primary btn-lg" />
+            </div>
+        </form>
+    </article>
+    <!----------------摄影排行榜 结束----------------------->
+</main>
+<% include ../footer %>
+<script src="/js/photographers.js"></script>

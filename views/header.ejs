@@ -5,15 +5,19 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <% if("undefined" != typeof cssGroup) { cssGroup.forEach(function(css, index){ %>
+    <link rel="stylesheet" href="<%= css %>" />
+    <% }) } %>
 </head>
 <body>
 <header id="header" class="container-fluid clearfix">
-    <a href="./" class="pull-left " id="logo" title="72PX摄影">绵阳约拍</a>
+    <a href="/" class="pull-left " id="logo" title="72PX摄影">绵阳约拍</a>
     <nav id="headerNav" class="pull-right">
-        <a href="photographers" class="<% if(action == 'photographers'){ %>on<% } %>">摄影</a>
-        <a href="models" class="<% if(action == 'models'){ %>on<% } %>">模特</a>
-        <a href="collocations" class="<% if(action == 'collocations'){ %>on<% } %>">搭配</a>
-        <a href="prinks" class="<% if(action == 'prinks'){ %>on<% } %>">化妆</a>
-        <a href="scenes" class="<% if(action == 'scenes'){ %>on<% } %>">场景</a>
+        <a href="/works" class="<% if(action == 'works'){ %>on<% } %>">原创</a>
+        <a href="/photographers" class="<% if(action == 'photographers'){ %>on<% } %>">摄影</a>
+        <a href="/models" class="<% if(action == 'models'){ %>on<% } %>">模特</a>
+        <a href="/collocations" class="<% if(action == 'collocations'){ %>on<% } %>">搭配</a>
+        <a href="/prinks" class="<% if(action == 'prinks'){ %>on<% } %>">化妆</a>
+        <a href="/scenes" class="<% if(action == 'scenes'){ %>on<% } %>">场景</a>
     </nav>
 </header>

@@ -7,12 +7,12 @@ var db = require('./db');    //引用mongoose ORM框架
 // 定义一个搭配Schema
 var CollocationsSchema = new mongoose.Schema({
     name : {
-        type:'String', // 数据类型
+        type:String, // 数据类型
         requires : true // 不能为空
     },
     hits : Number,
     cover : {
-        type:'String', // 数据类型
+        type:String, // 数据类型
         requires : true // 不能为空
     },
     imageList : [String],
