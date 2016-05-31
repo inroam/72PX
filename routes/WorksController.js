@@ -97,6 +97,7 @@ var WorksController = function(router){
 			});
 			newWorks.save(function(err){
 				if (err) return handleError(err);
+				galleryIds = []; //清空图片数组
 			});
 			res.redirect('/works');
 		});
