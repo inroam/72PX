@@ -38,10 +38,29 @@ var WorksController = function(router){
 				title: '72PX摄影',
 				action : 'works',
 				cssGroup : ["/css/works.css"],
-				jsGroup : ["/js/works.js"],
-				works : work
+				jsGroup : ["/js/waterfall.min.js","/js/works.js"],
+				//works : work
 			});
 		});
+	});
+	/* 作品异步请求 */
+	router.get('/works/pages/:page', function(req, res, next) {
+		var page = req.params.page || 1 ;
+		//var callback = req.params.callback || '' ;
+		var pageSize = 4;
+		works.getWorksByPage(page, pageSize, Works, 'galleryIds', {}, {_id : 1}, function(err, pager){
+			if(err){
+				next(err);
+			}else {
+				if(pager.results.length > 0){
+					res.json(pager);
+				}else{
+					res.send("error");
+				}
+
+			}
+		});
+
 	});
 
 	/* 作品详细页 */

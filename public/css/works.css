@@ -2,6 +2,10 @@
 #worksMain{margin-top: 20px;}
 #worksContent{max-height: 400px; min-height: 100px;}
 
+
+#worksWaterfall .item{width: 400px; overflow: hidden; height: auto; }
+#waterfall-message,#waterfall-loading{margin: 20px auto}
+
 #uploader{color: #838383;  font-size: 12px; position: relative; padding: 45px 15px 15px; margin: 15px 0; background-color: #fafafa; box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);  border:1px solid #eee;  }
 
 

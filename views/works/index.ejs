@@ -9,16 +9,9 @@
             </div>
         </div>
     </header>
-    <section id="worksMain" class="container-fluid items">
-        <ul>
-            <% works.forEach(function(work, index){ %>
-            <li class="col-lg-3 col-sm-3">
-                <a href="/works/detail/<%= work._id %>" class="show"><img src="<%= work.galleryIds[0].url %>" class="img-responsive" /></a>
-            </li>
-            <% }) %>
-        </ul>
+    <section id="worksMain">
+        <div id="worksWaterfall"></div>
     </section>
     <!----------------摄影排行榜 结束----------------------->
 </main>
 <% include ../footer %>
-<script src="/js/works.js"></script>

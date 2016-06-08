@@ -3,6 +3,7 @@
  */
 var mongoose = require('mongoose');    //引用mongoose模块
 var db = require('./db');    //引用mongoose ORM框架
+var async = require('async'); //引用流程控制
 
 var Schema = mongoose.Schema;
 
@@ -54,6 +55,48 @@ WorksSchema.methods.getAll = function(callback){
     return this.model("works").find(callback).populate("galleryIds",'url', null, {sort: {_id : 1}}); //倒序查出作品中的图片
 }
 
+/* 获取作品总数  */
+WorksSchema.methods.getWorksCount = function(conditions, callback){
+    return this.model("works").count(conditions, callback);
+};
+
+/*
+ * 通过分页获取作品
+ * param page : 第几页
+ * param pageSize : 每页数量
+ * param model : 模型
+ * param populate : 关联
+ * param queryParams : 查询条件
+ * param sortParams : 排序方式
+ * param callback : 回掉函数
+ */
+
+WorksSchema.methods.getWorksByPage = function (page, pageSize, model, populate, queryParams, sortParams, callback) {
+    var start = (page - 1) * pageSize;
+    var pager = {
+        pageNumber: page
+    };
+    //return model.find(queryParams, callback).skip(start).limit(pageSize).populate(populate).sort(sortParams);
+    //并行执行
+    async.parallel({
+        count: function (done) {  // 查询数量
+            model.count(queryParams).exec(function (err, count) {
+                done(err, count);
+            });
+        },
+        records: function (done) {   // 查询一页的记录
+            model.find(queryParams).skip(start).limit(pageSize).populate(populate).sort(sortParams).exec(function (err, doc) {
+                done(err, doc);
+            });
+        }
+    }, function (err, results) {
+        var count = results.count;
+        pager.pageCount = (count - 1) / pageSize + 1;
+        pager.results = results.records;
+        callback(err, pager);
+    });
+};
+
 /* 根据用户倒序查出作品  */
 WorksSchema.methods.getWorksByUserId = function(userId, callback){
     return this.model("works").find({userId: userId},callback).populate("galleryIds",'url', null, {sort: {_id : 1}});
@@ -66,7 +109,6 @@ WorksSchema.statics.getOne = function(id, callback){
 
 // 将搭配Schema 发布为 作品模型
 var Works = db.model("works",WorksSchema);
-
 
 module.exports = Works;
 
