@@ -11,6 +11,11 @@ var homeController = require('../routes/HomeController'), //引用首页路由
 
 // 实现路由的模块分离
 var controller = function(app){
+    // get session
+    app.use(function (req, res, next) {
+        res.locals.user = req.session.user || null;
+        next();
+    });
     homeController(app);
     userController(app);
     collocationsController(app);
