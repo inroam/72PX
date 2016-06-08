@@ -1,5 +1,3 @@
-
-
 #usersHeder{height: 260px; overflow: hidden; position: relative; background-position: center center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;}
 #usersHeder .info{position:relative; top: 80px; z-index:2; color: #fff; background:none}
 #usersHeder h2{font-size: 40px;}
@@ -7,3 +5,8 @@
 #usersHeder .author{margin-right: 20px; color: #fff}
 
 #usersWorksMain{margin-top: 30px;}
+
+/* 个人设置 */
+#setting header{line-height: 50px; height: 50px; background-color: #F4F4F4; padding-left: 50px;}
+#setting header a{margin-right: 20px; font-size: 14px;}
+#settingMain{margin: 30px auto;}

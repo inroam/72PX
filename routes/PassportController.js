@@ -1,5 +1,6 @@
 var Users = require("../models/UsersModel"), // 引用用户模型
-    crypto = require("crypto"); // 引用加密模块
+    crypto = require("crypto"), // 引用加密模块
+    auth = require("../middleware/auth"); // 引用验证模块
 
 // 自定义文件
 var cssGroup = [
@@ -13,7 +14,7 @@ var jsGroup = [
 
 var passportController = function(router){
 
-    router.all('/passport/register|login', checkNotLogin);
+    router.all('/passport/register|login', auth.checkLogin);
     // 用户注册
     router.get('/passport/register', function(req, res, next){
         res.render('passport/register', {
@@ -109,28 +110,12 @@ var passportController = function(router){
     });
 
     // 用户退出
-    router.get('/passport/logout', checkLogin);
+    router.get('/passport/logout', auth.checkLogin);
     router.get('/passport/logout', function (req, res) {
         req.session.user = null;
         req.flash('success', '退出成功!');
         res.redirect('/message');//退出成功后跳转到主页
     });
-
-    function checkLogin(req, res, next) {
-        if (!req.session.user) {
-            req.flash('error', '未登录!');
-            return res.redirect('/passport/login');
-        }
-        next();
-    }
-
-    function checkNotLogin(req, res, next) {
-        if (req.session.user) {
-            req.flash('error', '已登录!');
-            return res.redirect('back');//返回之前的页面
-        }
-        next();
-    }
 }
 
 module.exports = passportController;
