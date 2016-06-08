@@ -1,12 +1,26 @@
 var Users = require("../models/UsersModel"), // 引用用户模型
     crypto = require("crypto"); // 引用加密模块
 
+// 自定义文件
+var cssGroup = [
+    "/css/passport.css"
+];
+var jsGroup = [
+    "/layer/layer.js", //初始化上传组件
+    "/js/particles.min.js",
+    "/js/passport.js"
+];
+
 var passportController = function(router){
+
+    router.all('/passport/register|login', checkNotLogin);
     // 用户注册
     router.get('/passport/register', function(req, res, next){
-        res.render('register', {
+        res.render('passport/register', {
             title : '72PX用户注册',
-            action : 'user',
+            action : 'register',
+            cssGroup : cssGroup,
+            jsGroup : jsGroup,
             user: req.session.user,
             success: req.flash('success').toString(),
             error: req.flash('error').toString()
@@ -60,9 +74,11 @@ var passportController = function(router){
 
     // 用户登陆
     router.get('/passport/login', function (req, res, next) {
-        res.render('login', {
+        res.render('passport/login', {
             title : '72PX用户登录',
-            action : 'user',
+            action : 'login',
+            cssGroup : cssGroup,
+            jsGroup : jsGroup,
             user: req.session.user,
             success: req.flash('success').toString(),
             error: req.flash('error').toString()
@@ -92,6 +108,29 @@ var passportController = function(router){
         });
     });
 
+    // 用户退出
+    router.get('/passport/logout', checkLogin);
+    router.get('/passport/logout', function (req, res) {
+        req.session.user = null;
+        req.flash('success', '退出成功!');
+        res.redirect('/message');//退出成功后跳转到主页
+    });
+
+    function checkLogin(req, res, next) {
+        if (!req.session.user) {
+            req.flash('error', '未登录!');
+            return res.redirect('/passport/login');
+        }
+        next();
+    }
+
+    function checkNotLogin(req, res, next) {
+        if (req.session.user) {
+            req.flash('error', '已登录!');
+            return res.redirect('back');//返回之前的页面
+        }
+        next();
+    }
 }
 
 module.exports = passportController;

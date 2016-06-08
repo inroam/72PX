@@ -3,8 +3,8 @@
  */
 /* ----------------------约拍场景列表 ------------------------------*/
 var height = $(window).height();
-$("#scenesMap").height((height-60)+"px");
-$("#scenesTopMain").height((height-210)+"px");
+$("#scenesMap").height((height-50)+"px");
+$("#scenesTopMain").height((height-200)+"px");
 $("#scenesTopMain").perfectScrollbar();
 
 $(window).resize(function(){
