@@ -14,7 +14,7 @@ var jsGroup = [
 
 var passportController = function(router){
 
-    router.all('/passport/register|login', auth.checkLogin);
+    router.all('/passport/register|login', auth.checkNotLogin);
     // 用户注册
     router.get('/passport/register', function(req, res, next){
         res.render('passport/register', {
