@@ -13,6 +13,8 @@ var flash = require('connect-flash'); // 消息模块
 var router = require('./middleware/index');
 
 var app = express();
+port = process.env.PORT || 8080;//获取输入的PORT值作为服务器监听的端口号，如果没有默认是3000
+app.listen(port);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

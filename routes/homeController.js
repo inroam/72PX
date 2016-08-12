@@ -1,5 +1,11 @@
 var Home = require("../models/HomeModel.js"); // 引用搭配模型
 
+var cssGroup = [
+  "/css/home.css"
+];
+var jsGroup = [
+  "/js/home.js"
+];
 var homeController = function(router){
   /* GET home page. */
   router.get('/', function(req, res, next) {
@@ -9,7 +15,9 @@ var homeController = function(router){
       title : '72PX',
       action : 'index',
       homes : 'homes',
-      bg :  bgIndex
+      bg :  bgIndex,
+      cssGroup : cssGroup,
+      jsGroup : jsGroup
     });
   });
 }
